@@ -1,0 +1,40 @@
+{
+  "name": "ampersand-mymodule",
+  "description": "What gets produced by imlucas/khaos-amp template.",
+  "author": "Lucas Hrabovsky <hrabovsky.lucas@gmail.com>",
+  "version": "0.0.0",
+  "bugs": "https://github.com/mongodb-js/ampersand-mymodule/issues",
+  "homepage": "https://github.com/mongodb-js/ampersand-mymodule",
+  "repository": "git://github.com/mongodb-js/ampersand-mymodule.git",
+  "license": "MIT",
+  "keywords": [
+    "mongodb-js",
+    "ampersand"
+  ],
+  "scripts": {
+    "test-ci": "zuul -- test/index.test.js",
+    "start": "zuul --local 3001 --open -- test/index.test.js",
+    "test": "zuul --phantom -- /test/index.test.js",
+    "lint": "jshint",
+    "format": "jsfmt",
+    "check-missing": "dependency-check ./ --missing",
+    "check-unused": "dependency-check ./ --unused"
+  },
+  "precommit": ["format", "lint", "check-unused", "check-missing", "test"],
+  "main": "ampersand-mymodule.js",
+  "dependencies": {
+
+  },
+  "devDependencies": {
+    "dependency-check": "^2.2.2",
+    "esformatter-braces": "^1.0.0",
+    "esformatter-quotes": "^1.0.0",
+    "esformatter-semicolons": "^1.0.3",
+    "jsfmt": "^0.4.1",
+    "jshint": "^2.6.3",
+    "mocha": "^2.1.0",
+    "phantomjs": "^1.9.15",
+    "precommit-hook": "^1.0.7",
+    "zuul": "^1.19.0"
+  }
+}
